@@ -13,7 +13,7 @@ public class ContactData {
 	public String byear;
 	public String belonggroup;
 	public String address2;
-	public String home;
+	public String phone2;
 
 	public ContactData() {
 		
@@ -34,6 +34,6 @@ public class ContactData {
 		this.byear = byear;
 		this.belonggroup = belonggroup;
 		this.address2 = address2;
-		this.home = home;
+		this.phone2 = home;
 	}
 }
