@@ -28,4 +28,29 @@ public class GroupHelper extends HelperBase {
 		click(By.linkText("group page"));
 	}
 
+	public void deleteGroup(int indexGroup) {
+		selectGroupByIndex(indexGroup);
+		click(By.name("delete"));
+	}
+
+	private void selectGroupByIndex(int indexGroup) {
+		click(By.xpath("//input[@name='selected[]'][" + indexGroup + "]"));
+	}
+
+	public void initGroupModification(int indexGroup) {
+		selectGroupByIndex(indexGroup);
+		click(By.name("edit"));
+	}
+
+	public void submitGroupModification() {
+		click(By.name("update"));		
+	}
+
+	public void deleteGroups(int...indexGroups) {
+		for (int indexGroup : indexGroups) {
+			selectGroupByIndex(indexGroup);
+		} 
+		click(By.name("delete"));		
+	}
+
 }

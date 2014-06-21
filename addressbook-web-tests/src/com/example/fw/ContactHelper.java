@@ -37,5 +37,25 @@ public class ContactHelper extends HelperBase {
 	public void returnHomePage() {
 		click(By.linkText("home"));	
 	}
+
+	public void deleteContact() {		
+		click(By.xpath("(//input[@name='update'])[2]"));
+	}
+
+	public void initContactEdit(int indexContact) {
+		click(By.xpath("(//img[@alt='Edit'])[" + indexContact + "]"));
+	}	
+
+	public void updateContact() {
+		click(By.xpath("(//input[@name='update'])[1]"));		
+	}
+
+	public void initContactDetails(int indexContact) {
+		click(By.xpath("(//img[@alt='Details'])[" + indexContact + "]"));
+	}
+
+	public void initContactModify() {
+		click(By.xpath("(//input[@name='modifiy'])[1]"));		
+	}
 	
 }
