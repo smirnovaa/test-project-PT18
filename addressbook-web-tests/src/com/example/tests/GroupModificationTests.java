@@ -11,6 +11,7 @@ public class GroupModificationTests extends TestBase {
 	
 	@Test
 	public void modifySomeGroup() {
+		int indexForModify = 0;
 		app.getNavigationHelper().openMainPage();
 	    app.getNavigationHelper().gotoGroupPage();
 
@@ -18,7 +19,7 @@ public class GroupModificationTests extends TestBase {
 	    List<GroupData> oldList = app.getGroupHelper().getGroups();
 	    
 	    // actions
-		app.getGroupHelper().initGroupModification(0);
+		app.getGroupHelper().initGroupModification(indexForModify);
 		GroupData group = new GroupData();
 		group.name = "new name";
 		app.getGroupHelper().fillGroupForm(group);
@@ -29,7 +30,7 @@ public class GroupModificationTests extends TestBase {
 	    List<GroupData> newList = app.getGroupHelper().getGroups();
 	    
 	    // compare states
-	    oldList.remove(0);
+	    oldList.remove(indexForModify);
 	    oldList.add(group);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);

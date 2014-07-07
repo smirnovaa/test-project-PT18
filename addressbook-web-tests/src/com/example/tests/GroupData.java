@@ -46,7 +46,6 @@ public class GroupData implements Comparable<GroupData> {
 
 	@Override
 	public int compareTo(GroupData other) {
-		// TODO Auto-generated method stub
 		return this.name.toLowerCase().compareTo(other.name.toLowerCase());
 	}
 	
