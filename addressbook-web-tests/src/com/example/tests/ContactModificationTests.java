@@ -4,24 +4,24 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.testng.annotations.Test;
 
 public class ContactModificationTests extends TestBase {
 	
-	@Test
-	public void modifySomeContactEdit() {
-		int indexForModify = 9;
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void modifySomeContactEdit(ContactData contact) {
 		app.getNavigationHelper().openMainPage();
 
 	    // save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    
+	    Random rnd = new Random ();
+	    int indexForModify = rnd.nextInt(oldList.size()-1);
+	    
 	    // actions  
 		app.getContactHelper().initContactEdit(indexForModify);
-		ContactData contact = new ContactData();
-		contact.lastname = oldList.get(indexForModify).lastname;
-		contact.firstname = "peter";
 		app.getContactHelper().fillContactForm(contact);
 		app.getContactHelper().updateContact();
 		app.getContactHelper().returnHomePage();	
@@ -38,20 +38,19 @@ public class ContactModificationTests extends TestBase {
 	}
 	
 	
-	@Test
-	public void modifySomeContactModify() {
-		int indexForModify = 11;
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void modifySomeContactModify(ContactData contact) {
 		app.getNavigationHelper().openMainPage();
 
 	    // save old state
 	    List<ContactData> oldList = app.getContactHelper().getContacts();
 	    
+	    Random rnd = new Random ();
+	    int indexForModify = rnd.nextInt(oldList.size()-1);
+	    
 	    // actions  
 		app.getContactHelper().initContactDetails(indexForModify);
 		app.getContactHelper().initContactModify();		
-		ContactData contact = new ContactData();
-		contact.firstname = oldList.get(indexForModify).firstname;
-		contact.lastname = "John";
 		app.getContactHelper().fillContactForm(contact);
 		app.getContactHelper().updateContact();
 		app.getContactHelper().returnHomePage();	
