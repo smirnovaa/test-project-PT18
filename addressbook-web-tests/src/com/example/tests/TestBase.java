@@ -1,5 +1,7 @@
 package com.example.tests;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,16 +32,16 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidGroupsGenerator () {
 		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i=0; i<5; i++) {
-			GroupData group = new GroupData();
-			group.name = generateRandomGroupString();
-			group.header = generateRandomGroupString();
-			group.footer = generateRandomGroupString();
+		for (int i=0; i<2; i++) {
+			GroupData group = new GroupData()
+				.withName(generateRandomGroupString())
+				.withHeader(generateRandomGroupString())
+				.withFooter(generateRandomGroupString());			
 			list.add(new Object[]{group});
 		}
 		return list.iterator();
 	}
-	
+
 	public String  generateRandomGroupString() {
 		Random rnd = new Random();	
 		if(rnd.nextInt(3) == 0){
@@ -52,22 +54,21 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidContactGenerator () {
 		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i=0; i<2; i++) {
-			ContactData contact = new ContactData();
-			contact.firstname = generateRandomContactString();
-			contact.lastname = generateRandomContactString();
-			contact.address = generateRandomContactString();
-			contact.telephonehome = generateRandomContactString();
-			contact.mobilephone = generateRandomContactString();
-			contact.email = generateRandomContactString();
-			contact.email2 = generateRandomContactString();
-			contact.bday = generateRandomDayString();
-			contact.bmonth = generateRandomMonthString();
-			contact.byear = generateRandomYearString();
-			contact.address2 = generateRandomContactString();
-			contact.phone2 = generateRandomContactString();
-			list.add(new Object[]{contact});
-			System.out.println (i + ". " + contact);
+		for (int i=0; i<7; i++) {
+			ContactData contact = new ContactData()
+			.withFirstname(generateRandomContactString())
+			.withLastname(generateRandomContactString())
+			.withAddress(generateRandomContactString())
+			.withTelephonehome(generateRandomContactString())
+			.withMobilephone(generateRandomContactString())
+			.withEmail(generateRandomContactString())
+			.withEmail2(generateRandomContactString())
+			.withBday(generateRandomDayString())
+			.withBmonth(generateRandomMonthString())
+			.withByear(generateRandomYearString())
+			.withAddress2(generateRandomContactString())
+			.withPhone2(generateRandomContactString());
+			list.add(new Object[]{contact});			
 		}
 		return list.iterator();
 	}
