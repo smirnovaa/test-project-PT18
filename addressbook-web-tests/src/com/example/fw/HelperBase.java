@@ -58,4 +58,16 @@ public abstract class HelperBase {
 		}
 	}
 	
+	protected boolean onMainPage() {
+		return (driver.findElements(By.id("maintable")).size() >0);
+	}
+
+	protected boolean onGroupsPage() {		
+		if(driver.getCurrentUrl().contains("/group.php")
+				&& driver.findElements(By.name("new")).size() >0) {
+			return true;
+		} else {
+			return false;			
+		}
+	}
 }
