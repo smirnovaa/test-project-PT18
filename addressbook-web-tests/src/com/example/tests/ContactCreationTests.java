@@ -1,8 +1,8 @@
 package com.example.tests;
 
-import org.testng.AssertJUnit;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 import org.testng.annotations.Test;
-
 import com.example.utils.SortedListOf;
 
 public class ContactCreationTests extends TestBase{
@@ -20,8 +20,7 @@ public class ContactCreationTests extends TestBase{
     SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
     
     // compare states
-    oldList.add(contact);   
-    AssertJUnit.assertEquals(newList, oldList);  
+    assertThat(newList, equalTo(oldList.withAdded(contact)));          
   }
    
 }
