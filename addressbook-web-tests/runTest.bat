@@ -1,0 +1,2 @@
+cd d:\pt18\test-project-PT18\addressbook-web-tests
+java -cp bin;d:\pt18\xstream-1.4.7\lib\xstream-1.4.7.jar;d:\pt18\xstream-1.4.7\lib\xstream\xpp3_min-1.1.4c.jar;d:\pt18\xstream-1.4.7\lib\xstream\xmlpull-1.1.3.1.jar;d:\pt18\selenium-server-standalone-2.42.1.jar org.testng.TestNG testng-customsuite.xml
