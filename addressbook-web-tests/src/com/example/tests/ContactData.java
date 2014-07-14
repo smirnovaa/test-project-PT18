@@ -1,6 +1,7 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
+	private String id;
 	private String firstname;
 	private String lastname;
 	private String address;
@@ -87,94 +88,182 @@ public class ContactData implements Comparable<ContactData> {
 		  return this.lastname.compareTo(other.lastname);
 		}			
 	}
+	
+	public ContactData withId(String id) {
+		this.id = id;		
+		return this;
+	}	
+	
 	public ContactData withFirstname(String firstname) {
 		this.firstname = firstname;		
 		return this;
 	}
+	
 	public ContactData withLastname(String lastname) {
 		this.lastname = lastname;		
 		return this;
 	}
+	
 	public ContactData withAddress(String address) {
 		this.address = address;		
 		return this;
 	}
+	
 	public ContactData withTelephonehome(String telephonehome) {
 		this.telephonehome = telephonehome;
 		return this;
 	}
+	
 	public ContactData withMobilephone(String Mobilephone) {
 		mobilephone = Mobilephone;
 		return this;
 	}
+	
 	public ContactData withEmail(String email) {
 		this.email = email;
 		return this;
 	}
+	
 	public ContactData withEmail2(String email2) {
 		this.email2 = email2;
 		return this;
 	}
+	
 	public ContactData withBday(String bday) {
 		this.bday = bday;
 		return this;
 	}
+	
 	public ContactData withBmonth(String bmonth) {
 		this.bmonth = bmonth;
 		return this;
 	}
+	
 	public ContactData withByear(String byear) {
 		this.byear = byear;
 		return this;
 	}
+	
 	public ContactData withAddress2(String address2) {
 		this.address2 = address2;
 		return this;
 	}
+	
 	public ContactData withPhone2(String phone2) {
 		this.phone2 = phone2;
 		return this;
+	}	
+	
+	public String getId() {
+		return id;
 	}
+	
 	public String getFirstname() {
 		return firstname;
 	}
+	
 	public String getLastname() {
 		return lastname;
 	}
+	
 	public String getAddress() {
 		return address;
 	}
+	
 	public String getTelephonehome() {
 		return telephonehome;
 	}
+	
 	public String getMobilephone() {
 		return mobilephone;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public String getEmail2() {
 		return email2;
 	}
+	
 	public String getBday() {
 		return bday;
 	}
+	
 	public String getBmonth() {
 		return bmonth;
 	}
+	
 	public String getByear() {
 		return byear;
 	}
+	
 	public String getBelonggroup() {
 		return belonggroup;
 	}
+	
 	public String getAddress2() {
 		return address2;
 	}
+	
 	public String getPhone2() {
 		return phone2;
-	}	
+	}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
 	
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public void setTelephonehome(String telephonehome) {
+		this.telephonehome = telephonehome;
+	}
+	
+	public void setMobilephone(String mobilephone) {
+		this.mobilephone = mobilephone;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+	
+	public void setBday(String bday) {
+		this.bday = bday;
+	}
+	
+	public void setBmonth(String bmonth) {
+		this.bmonth = bmonth;
+	}
+	
+	public void setByear(String byear) {
+		this.byear = byear;
+	}
+	
+	public void setBelonggroup(String belonggroup) {
+		this.belonggroup = belonggroup;
+	}
+	
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+	
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}		
 	
 }
